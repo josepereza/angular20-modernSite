@@ -1,0 +1,38 @@
+<section class="hero">
+      <div class="hero-background">
+        <div class="floating-shapes">
+            @for (shape of shapes; track $index) {
+
+             <div class="shape" ></div>
+
+            }
+        </div>
+      </div>
+      
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-line">Bienvenido al</span>
+          <span class="title-line ">
+            <span class="gradient-text">Futuro Digital</span>
+          </span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Descubre experiencias inmersivas con tecnología de vanguardia
+        </p>
+        
+        <div class="hero-buttons">
+          <button class="btn btn-primary" (click)="scrollToSection('features')">
+            Explorar
+            <span class="btn-icon">→</span>
+          </button>
+          <button class="btn btn-secondary" (click)="scrollToSection('demo')">
+            Ver Demo
+          </button>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>

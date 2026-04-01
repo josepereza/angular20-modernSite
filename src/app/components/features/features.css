@@ -1,0 +1,71 @@
+.features-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  
+  
+}
+
+
+
+@keyframes gridSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+  
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* ---- Móvil ---- */
+@media (max-width: 768px) {
+  /* 1.  Todo el grid entra antes */
+  .features-grid {
+  grid-template-columns:1fr;
+  
+}
+
+  
+}
+
+
+

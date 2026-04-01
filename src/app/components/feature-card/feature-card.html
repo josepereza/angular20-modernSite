@@ -1,0 +1,30 @@
+ <div class="feature-card">
+      <div class="card-icon">
+        <div class="icon-wrapper">
+          <span class="icon">{{ icon() }}</span>
+        </div>
+      </div>
+      
+      <div class="card-content">
+        <h3 class="card-title">{{ title() }}</h3>
+        <p class="card-description">{{ description() }}</p>
+        
+        <div class="card-features">
+            @for (feature of features(); track $index) {
+
+                 <div class="feature-item" >
+            <span class="feature-icon">✓</span>
+            <span class="feature-text">{{ feature }}</span>
+          </div>
+            }
+         
+        </div>
+        
+        <button class="card-button" (click)="handleClick()">
+          {{ buttonText() }}
+          <span class="button-arrow">→</span>
+        </button>
+      </div>
+      
+      <div class="card-glow"></div>
+    </div>

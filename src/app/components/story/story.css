@@ -1,0 +1,122 @@
+/* Contenedor principal */
+.story-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.display-2 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.max-w-lg {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.rounded {
+  border-radius: 12px;
+}
+
+.shadow {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* === 🔤 ANIMACIÓN DE TEXTO QUE SE REVELA === */
+.text-reveal {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-name: fade-up-char;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+  animation-range: entry 40%; /* Comienza cuando entra al 40% */
+}
+
+/* Diferencia entre el primer y segundo renglón */
+.text-reveal:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.text-reveal:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fade-up-char {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === ✍️ ANIMACIÓN DEL PÁRRAFO === */
+.text-content {
+  opacity: 0;
+  transform: translateY(15px);
+  color: #ccc;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+  animation-range: entry 60%;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === 🖼️ EFECTO PARALLAX SUAVE EN LA IMAGEN (con escala y blur progresivo) === */
+.image-container img {
+  transform: scale(1.05) translateY(10px);
+  filter: blur(8px);
+  transition: transform 0.1s ease-out, filter 0.1s ease-out;
+
+  /* Animación controlada por scroll */
+  animation-name: grow-and-sharpen;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-timeline: view();
+  animation-range: entry cover; /* Desde entrada hasta estar completamente visible */
+}
+
+@keyframes grow-and-sharpen {
+  from {
+    transform: scale(1.1) translateY(20px);
+    filter: blur(10px);
+  }
+  to {
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* === 🛠️ FALLBACK para navegadores que NO soportan Scroll Timeline === */
+@supports not (animation-timeline: view()) {
+  .text-reveal,
+  .text-content,
+  .image-container img {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none;
+  }
+
+  /* Añadir animación suave básica si se quiere */
+  .text-reveal, .text-content {
+    animation: fadeInSlow 1s ease-out forwards;
+  }
+}
+
+@keyframes fadeInSlow {
+  to { opacity: 1; }
+}

@@ -1,0 +1,33 @@
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.pill {
+  list-style: none;
+  padding: .6rem 1.2rem;
+  font-weight: 500;
+  color: #1f2937;
+  background: #f3f4f6;
+  border-radius: 999px;
+  cursor: default;
+  transition: all .25s ease;
+  animation: popIn linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.pill:hover {
+  background: #6366f1;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(99, 102, 241, .4);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
