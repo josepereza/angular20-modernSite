@@ -6,10 +6,11 @@ import { Features } from './components/features/features';
 import { FeaturePill } from './components/feature-pill/feature-pill';
 import { Jumbotron } from './components/jumbotron/jumbotron';
 import { JumbotronCenter } from './components/jumbotron-center/jumbotron-center';
+import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Hero,Features,FeaturePill,Jumbotron,JumbotronCenter],
+  imports: [Hero, Features, FeaturePill, Jumbotron, JumbotronCenter, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
