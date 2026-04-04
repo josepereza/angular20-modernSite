@@ -33,11 +33,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  
-  
 }
-
-
 
 @keyframes gridSlideIn {
   from {
@@ -50,22 +46,29 @@
   }
 }
 
+@media (max-width: 768px) {
+  .features-section {
+    padding: 4rem 0;
+  }
 
-  
+  .container {
+    width: 100%;
+    max-width: none;
+    padding-inline: 5mm;
+  }
+
   .section-title {
     font-size: 2rem;
   }
 
-  /* ---- Móvil ---- */
-@media (max-width: 768px) {
-  /* 1.  Todo el grid entra antes */
   .features-grid {
-  grid-template-columns:1fr;
-  
-}
+    grid-template-columns: 1fr;
+  }
 
-  
+  app-feature-card {
+    display: block;
+    width: 100%;
+  }
 }
-
 
 
